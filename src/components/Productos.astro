@@ -1,0 +1,566 @@
+---
+const filters = ["Tipo de piel", "Categoría"];
+
+import { Image } from "astro:assets";
+import BolsaIcon from "../assets/sgv/bolsa.astro";
+import pctgl1 from "../assets/pctgl-1.webp";
+import pctgl2 from "../assets/pctgl-2.webp";
+import pctgl3 from "../assets/pctgl-3.webp";
+import pctgl4 from "../assets/pctgl-4.webp";
+import pctgl5 from "../assets/pctgl-5.webp";
+import pctgl6 from "../assets/pctgl-6.webp";
+import pctgl7 from "../assets/pctgl-7.webp";
+import pctgl8 from "../assets/pctgl-8.webp";
+import pctgl9 from "../assets/pctgl-9.webp";
+import pctgl10 from "../assets/pctgl-10.webp";
+import pctgl11 from "../assets/pctgl-11.webp";
+import pctgl12 from "../assets/pctgl-12.webp";
+import pctgl13 from "../assets/pctgl-13.webp";
+import pctgl14 from "../assets/pctgl-14.webp";
+import pctgl15 from "../assets/pctgl-15.webp";
+import pctgl16 from "../assets/pctgl-16.webp";
+import pctgl17 from "../assets/pctgl-17.webp";
+import pctgl18 from "../assets/pctgl-18.webp";
+
+const sections = [
+    {
+        title: "Limpiadores",
+        items: [
+            {
+                title: "COSRX Low pH Good Morning Gel Cleanser (150 ml)",
+                image: pctgl1,
+                price: "13 €",
+                description:
+                    "Gel limpiador de bajo pH formulado con aceite de arbol de te y BHA natural. Limpia suavemente sin alterar la barrera cutanea.",
+                benefits: [
+                    "Mantiene el pH equilibrado",
+                    "Controla exceso de grasa",
+                    "Ideal para uso diario",
+                ],
+                skin: "Mixta, grasa, sensible",
+            },
+            {
+                title: "Innisfree Green Tea Foam Cleanser (150 ml)",
+                image: pctgl2,
+                price: "16 €",
+                description:
+                    "Limpiador espumoso con extracto de te verde de Jeju, rico en antioxidantes.",
+                benefits: [
+                    "Limpieza profunda",
+                    "Hidratacion ligera",
+                    "Sensacion fresca",
+                ],
+                skin: "Normal, mixta",
+            },
+            {
+                title: "Etude House SoonJung pH 6.5 Whip Cleanser (150 ml)",
+                image: pctgl3,
+                price: "15 €",
+                description:
+                    "Espuma limpiadora ultra suave con pantenol y madecassoside para pieles sensibles.",
+                benefits: ["Calma irritaciones", "Refuerza la barrera cutanea"],
+                skin: "Sensible, seca",
+            },
+        ],
+    },
+    {
+        title: "Tónicos",
+        items: [
+            {
+                title: "Klairs Supple Preparation Unscented Toner (180 ml)",
+                image: pctgl4,
+                price: "19 €",
+                description:
+                    "Tonico hidratante sin fragancia que equilibra el pH y prepara la piel.",
+                benefits: ["Mejora absorcion de productos", "Calma y suaviza"],
+                skin: "Todas, especialmente sensible",
+            },
+            {
+                title: "Laneige Cream Skin Refiner (170 ml)",
+                image: pctgl5,
+                price: "24 €",
+                description:
+                    "Innovador tonico-crema que combina hidratacion intensa con textura ligera.",
+                benefits: ["Nutricion profunda", "Mejora elasticidad"],
+                skin: "Seca, deshidratada",
+            },
+            {
+                title: "SOME BY MI AHA-BHA-PHA 30 Days Miracle Toner (150 ml)",
+                image: pctgl6,
+                price: "21 €",
+                description:
+                    "Tonico exfoliante con acidos suaves y extracto de arbol de te.",
+                benefits: ["Reduce acne", "Limpia poros", "Mejora textura"],
+                skin: "Grasa, acneica",
+            },
+        ],
+    },
+    {
+        title: "Serums / Esencias",
+        items: [
+            {
+                title: "COSRX Advanced Snail 96 Mucin Power Essence (100 ml)",
+                image: pctgl7,
+                price: "26 €",
+                description:
+                    "Esencia con 96% de mucina de caracol que repara e hidrata profundamente la piel.",
+                benefits: ["Regeneracion celular", "Mejora cicatrices"],
+                skin: "Todas",
+            },
+            {
+                title: "Beauty of Joseon Glow Serum (Propolis + Niacinamide) (30 ml)",
+                image: pctgl8,
+                price: "20 €",
+                description:
+                    "Serum iluminador con propoleo y niacinamida para una piel uniforme.",
+                benefits: ["Reduce manchas", "Aporta luminosidad"],
+                skin: "Mixta, grasa",
+            },
+            {
+                title: "Laneige Water Bank Blue Hyaluronic Serum (50 ml)",
+                image: pctgl9,
+                price: "32 €",
+                description:
+                    "Serum con acido hialuronico de nueva generacion para hidratacion profunda.",
+                benefits: ["Retiene la humedad", "Piel mas firme"],
+                skin: "Seca, normal",
+            },
+        ],
+    },
+    {
+        title: "Exfoliantes",
+        items: [
+            {
+                title: "SOME BY MI AHA-BHA-PHA 30 Days Miracle Serum (50 ml)",
+                image: pctgl10,
+                price: "22 €",
+                description:
+                    "Serum exfoliante con accion calmante para piel acneica.",
+                benefits: ["Reduce imperfecciones", "Controla grasa"],
+                skin: "Grasa",
+            },
+            {
+                title: "NEOGEN Dermalogy Bio-Peel Gauze Peeling Lemon (200 ml)",
+                image: pctgl11,
+                price: "25 €",
+                description:
+                    "Discos exfoliantes con AHA y extracto de limon para renovar la piel.",
+                benefits: ["Elimina celulas muertas", "Ilumina el rostro"],
+                skin: "Normal, mixta",
+            },
+        ],
+    },
+    {
+        title: "Hidratantes",
+        items: [
+            {
+                title: "Etude House SoonJung 2x Barrier Intensive Cream (60 ml)",
+                image: pctgl12,
+                price: "23 €",
+                description:
+                    "Crema calmante con ingredientes que reparan la barrera cutanea.",
+                benefits: ["Reduce irritacion", "Refuerza la piel"],
+                skin: "Sensible",
+            },
+            {
+                title: "Laneige Water Sleeping Mask EX (70 ml)",
+                image: pctgl13,
+                price: "29 €",
+                description:
+                    "Mascarilla nocturna que hidrata intensamente durante el sueno.",
+                benefits: ["Piel mas suave al despertar", "Mejora textura"],
+                skin: "Todas",
+            },
+            {
+                title: "Innisfree Green Tea Seed Cream (50 ml)",
+                image: pctgl14,
+                price: "22 €",
+                description:
+                    "Crema hidratante con extracto de te verde rico en antioxidantes.",
+                benefits: ["Hidratacion duradera", "Proteccion ambiental"],
+                skin: "Normal, mixta",
+            },
+        ],
+    },
+    {
+        title: "Protectores solares",
+        items: [
+            {
+                title: "Beauty of Joseon Relief Sun: Rice + Probiotics SPF50+ (50 ml)",
+                image: pctgl16,
+                price: "19 €",
+                description:
+                    "Protector solar con extracto de arroz y probioticos para una piel luminosa.",
+                benefits: ["Alta proteccion UV", "Hidratacion ligera"],
+                skin: "Todas",
+            },
+            {
+                title: "Innisfree Daily UV Defense Sunscreen SPF36 (50 ml)",
+                image: pctgl17,
+                price: "18 €",
+                description:
+                    "Protector solar hidratante de uso diario con acabado natural.",
+                benefits: ["Proteccion contra rayos UV", "Textura ligera"],
+                skin: "Normal",
+            },
+            {
+                title: "Missha All Around Safe Block Essence Sun Milk SPF50+ (70 ml)",
+                image: pctgl18,
+                price: "17 €",
+                description:
+                    "Protector solar tipo esencia con absorcion rapida y acabado fresco.",
+                benefits: ["No deja residuo blanco", "Ideal para uso diario"],
+                skin: "Mixta, grasa",
+            },
+        ],
+    },
+];
+---
+
+<section id="catalogo-productos" class="catalogo-productos">
+    <div class="catalogo-productos__container">
+        <div class="catalogo-productos__head">
+            <div>
+                <h2>Catálogo de Productos</h2>
+                <p>
+                    Encuentra el cuidado ideal para tu piel con productos
+                    coreanos seleccionados por calidad, innovación y eficacia.
+                </p>
+            </div>
+
+            <div
+                class="catalogo-productos__filters"
+                aria-label="Filtros simples"
+            >
+                {
+                    filters.map((filter) => (
+                        <span class="catalogo-productos__filter">{filter}</span>
+                    ))
+                }
+            </div>
+        </div>
+
+        <div class="catalogo-productos__sections">
+            {
+                sections.map((section) => (
+                    <section class="catalogo-productos__section">
+                        <h3 class="catalogo-productos__section-title">
+                            {section.title}
+                        </h3>
+                        <div class="catalogo-productos__grid">
+                            {section.items.map((product) => (
+                                <article class="product-card">
+                                    <Image
+                                        src={product.image}
+                                        alt={product.title}
+                                        class="product-card__image"
+                                    />
+                                    <div class="product-card__body">
+                                        <div class="product-card__top">
+                                            <p class="product-card__category">
+                                                {section.title}
+                                            </p>
+                                            <p class="product-card__price">
+                                                {product.price}
+                                            </p>
+                                        </div>
+                                        <h4 class="product-card__title">
+                                            {product.title}
+                                        </h4>
+                                        <p class="product-card__desc">
+                                            {product.description}
+                                        </p>
+                                        <div class="product-card__meta">
+                                            <p>
+                                                <strong>Beneficios:</strong>
+                                            </p>
+                                            <ul class="product-card__benefits-list">
+                                                {product.benefits.map(
+                                                    (item) => (
+                                                        <li>{item}</li>
+                                                    ),
+                                                )}
+                                            </ul>
+                                        </div>
+                                        <p class="product-card__meta">
+                                            <strong>Tipo de piel:</strong>{" "}
+                                            {product.skin}
+                                        </p>
+                                        <div class="add-car">
+                                            <a href="">
+                                                <BolsaIcon class="add-car__icon" />
+                                                <span>Al carrito</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </article>
+                            ))}
+                        </div>
+                    </section>
+                ))
+            }
+        </div>
+    </div>
+</section>
+
+<style>
+    .catalogo-productos {
+        background: linear-gradient(180deg, #fff6e9 0%, #f6f1e8 100%);
+        padding: 150px 0 72px;
+        font-family: "Poppins", sans-serif;
+    }
+
+    .catalogo-productos__container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 28px;
+    }
+
+    .catalogo-productos__head {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 24px;
+        margin-bottom: 26px;
+    }
+
+    .catalogo-productos__head h2 {
+        margin: 0;
+        font-family: "Poppins", sans-serif;
+        font-size: clamp(2.1rem, 4vw, 3rem);
+        line-height: 1.08;
+        font-weight: 800;
+        letter-spacing: -0.015em;
+        color: #2b2f32;
+    }
+
+    .catalogo-productos__head p {
+        margin: 10px 0 0;
+        max-width: 700px;
+        font-family: "Poppins", sans-serif;
+        font-size: 18px;
+        line-height: 1.6;
+        font-weight: 400;
+        color: #5f666b;
+    }
+
+    .catalogo-productos__filters {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        gap: 10px;
+    }
+
+    .catalogo-productos__filter {
+        display: inline-flex;
+        align-items: center;
+        padding: 9px 14px;
+        border-radius: 999px;
+        background-color: #ffffff;
+        border: 1px solid #d8e7dd;
+        font-family: "Poppins", sans-serif;
+        font-size: 13px;
+        font-weight: 600;
+        color: #3b6f64;
+    }
+
+    .catalogo-productos__sections {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .catalogo-productos__section {
+        padding: 18px 0 0;
+        border-top: 1px solid rgba(79, 124, 104, 0.18);
+    }
+
+    .catalogo-productos__section-title {
+        margin: 0 0 16px;
+        font-family: "Poppins", sans-serif;
+        font-size: 28px;
+        line-height: 1.15;
+        font-weight: 700;
+        letter-spacing: -0.008em;
+        color: #2c3034;
+    }
+
+    .catalogo-productos__grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 18px;
+    }
+
+    .product-card {
+        background-color: #ffffff;
+        border: 1px solid #e6ddd1;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 8px 20px rgba(45, 52, 54, 0.06);
+        display: flex;
+        flex-direction: column;
+    }
+
+    .product-card__image {
+        height: 390px;
+        width: 100%;
+        background-color: #c84f4f;
+        border-bottom: 2px solid #d6d6d6;
+    }
+
+    .product-card__body {
+        padding: 14px 14px 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .product-card__top {
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        align-items: flex-start;
+    }
+
+    .product-card__category {
+        margin: 0;
+        font-family: "Poppins", sans-serif;
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: #3b6f64;
+    }
+
+    .product-card__price {
+        margin: 0;
+        font-family: "Poppins", sans-serif;
+        font-size: 16px;
+        font-weight: 800;
+        color: #a04a61;
+        white-space: nowrap;
+    }
+
+    .product-card__title {
+        margin: 0;
+        font-family: "Poppins", sans-serif;
+        font-size: 20px;
+        line-height: 1.2;
+        font-weight: 700;
+        color: #2d3338;
+    }
+
+    .product-card__desc {
+        margin: 0;
+        font-family: "Poppins", sans-serif;
+        font-size: 14px;
+        line-height: 1.6;
+        font-weight: 400;
+        color: #5e656a;
+    }
+
+    .product-card__meta {
+        margin: 0;
+        font-family: "Poppins", sans-serif;
+        font-size: 13px;
+        line-height: 1.55;
+        color: #485057;
+    }
+
+    .product-card__meta p {
+        margin: 0;
+    }
+
+    .product-card__benefits-list {
+        margin: 4px 0 0;
+        padding-left: 18px;
+    }
+
+    .product-card__benefits-list li {
+        margin: 0;
+    }
+
+    .product-card__meta strong {
+        color: #2f2f2f;
+    }
+    .add-car {
+        background-color: #a4af98;
+        padding: 8px 12px;
+        border-radius: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10px;
+    }
+    .add-car a {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        text-decoration: none;
+        color: #ffffff;
+        font-family: "Open Sans", sans-serif;
+        font-weight: 700;
+        font-size: 14px;
+        letter-spacing: 0.03em;
+        text-transform: uppercase;
+    }
+
+    .add-car__icon {
+        width: 16px;
+        height: 16px;
+        display: inline-block;
+    }
+
+    @media (max-width: 1024px) {
+        .catalogo-productos__head {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .catalogo-productos__filters {
+            justify-content: flex-start;
+        }
+
+        .catalogo-productos__grid {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .catalogo-productos__section-title {
+            font-size: 24px;
+        }
+
+        .catalogo-productos__head h2 {
+            font-size: 38px;
+        }
+    }
+
+    @media (max-width: 640px) {
+        .catalogo-productos {
+            padding: 40px 0 56px;
+        }
+
+        .catalogo-productos__container {
+            padding: 0 16px;
+        }
+
+        .catalogo-productos__grid {
+            grid-template-columns: 1fr;
+        }
+
+        .catalogo-productos__section {
+            padding-top: 14px;
+        }
+
+        .catalogo-productos__head h2 {
+            font-size: 31px;
+        }
+
+        .catalogo-productos__head p {
+            font-size: 15px;
+        }
+
+        .product-card__image {
+            height: 176px;
+        }
+    }
+</style>

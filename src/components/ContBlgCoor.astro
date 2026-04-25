@@ -1,0 +1,261 @@
+---
+const posts = [
+	{
+		categoria: "rutina facial",
+		titulo: "Como empezar una rutina de cuidado facial desde cero",
+		descripcion:
+			"Si quieres comenzar a cuidar tu piel pero no sabes por donde empezar, lo mas importante es mantenerlo simple. Una rutina basica con limpieza, hidratacion y proteccion solar puede marcar una gran diferencia desde el primer momento...",
+		img: blgcor1,
+	},
+	{
+		categoria: "k-beauty",
+		titulo: "Beneficios del skincare coreano para tu piel",
+		descripcion:
+			"El skincare coreano se ha convertido en una de las tendencias mas populares por su enfoque en la prevencion y el cuidado progresivo de la piel. Sus productos destacan por su calidad, innovacion y resultados visibles...",
+		img: blgcor2,
+	},
+	{
+		categoria: "novedades",
+		titulo: "Descubre los nuevos productos disponibles en Easy Care",
+		descripcion:
+			"En Easy Care seguimos creciendo para ofrecerte lo mejor en cuidado facial y corporal. Hemos incorporado nuevos productos pensados para diferentes tipos de piel, siempre priorizando la calidad y la eficacia...",
+		img: blgcor3,
+	},
+	{
+		categoria: "asesoria",
+		titulo: "Por que es importante una asesoria personalizada?",
+		descripcion:
+			"Cada piel es unica, por eso elegir los productos adecuados puede ser complicado. En Easy Care te ofrecemos asesoramiento personalizado para ayudarte a encontrar la mejor rutina segun tus necesidades...",
+		img: blgcor4,
+	},
+	{
+		categoria: "tips",
+		titulo: "Consejos basicos para cuidar tu piel todos los dias",
+		descripcion:
+			"Mantener una piel saludable no requiere rutinas complicadas. Con pequenos habitos diarios puedes mejorar notablemente su apariencia. La constancia y el uso de productos adecuados son la clave...",
+		img: blgcor5,
+	},
+	{
+		categoria: "tipo de piel",
+		titulo: "Como elegir los productos adecuados segun tu tipo de piel",
+		descripcion:
+			"Elegir productos sin conocer tu tipo de piel puede generar resultados poco efectivos. En Easy Care te ayudamos a identificar tus necesidades y seleccionar productos que realmente funcionen para ti...",
+		img: blgcor6,
+	},
+];
+import { Image } from "astro:assets";
+import begr from "../assets/be-gr.webp";
+import blgcor1 from "../assets/blgcor-1.webp";
+import blgcor2 from "../assets/blgcor-2.webp";
+import blgcor3 from "../assets/blgcor-3.webp";
+import blgcor4 from "../assets/blgcor-4.webp";
+import blgcor5 from "../assets/blgcor-5.webp";
+import blgcor6 from "../assets/blgcor-6.webp"; 
+import FlechaIcon from "../assets/sgv/flecha.astro";
+--- 
+
+<section id="cont-blog-coor" class="cont-blog-coor">
+	<div class="cont-blog-coor__container">
+		<div class="cont-blog-coor__head">
+			<h2>Contenido del Blog Corporativo</h2>
+			<p>6 articulos clave para informar, educar y acompanar a tu comunidad.</p>
+		</div>
+
+		<div class="cont-blog-coor__layout">
+			<div class="cont-blog-coor__media">
+				<Image src={begr} alt="Contenido del blog corporativo" class="cont-blog-coor__img-placeholder" />
+			</div>
+
+			<div class="cont-blog-coor__grid">
+				{
+					posts.map((post) => (
+						<article class="blog-card">
+							<Image src={post.img} alt={post.titulo} class="blog-card__img" />
+							<div class="blog-card__body">
+								<p class="blog-card__cat">{post.categoria}</p>
+								<h3 class="blog-card__title">{post.titulo}</h3>
+								<p class="blog-card__desc">{post.descripcion}</p>
+								<a href="#" class="blog-card__link">
+									<span>Leer mas</span>
+									<FlechaIcon class="blog-card__link-icon" />
+								</a>
+							</div>
+						</article>
+					))
+				}
+			</div>
+		</div>
+	</div>
+</section>
+
+<style>
+	.cont-blog-coor {
+		background-color: #eef7f2;
+		padding: 56px 0 70px;
+	}
+
+	.cont-blog-coor__container {
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 0 28px;
+	}
+
+	.cont-blog-coor__head {
+		margin-bottom: 24px;
+	}
+
+	.cont-blog-coor__head h2 {
+		margin: 0;
+		font-family: "Playfair Display", serif;
+		font-size: 44px;
+		line-height: 1.05;
+		color: #2f2f2f;
+	}
+
+	.cont-blog-coor__head p {
+		margin: 10px 0 0;
+		font-family: "Open Sans", sans-serif;
+		font-size: 16px;
+		line-height: 1.4;
+		color: #6f6f6f;
+	}
+
+	.cont-blog-coor__layout {
+		display: grid;
+		grid-template-columns: 40% 60%;
+		gap: 20px;
+		align-items: stretch;
+	}
+
+	.cont-blog-coor__media {
+		min-height: 100%;
+	}
+
+	.cont-blog-coor__img-placeholder {
+		width: 100%;
+		height: 100%;
+		min-height: 860px;
+		border-radius: 10px;
+		display: block;
+		object-fit: cover;
+	}
+
+	.cont-blog-coor__grid {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 18px;
+	}
+
+	.blog-card {
+		background-color: #ffffff;
+		border: 1px solid #dce9e3;
+		border-radius: 10px;
+		overflow: hidden;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.blog-card__img {
+		height: 120px;
+		width: 100%;
+		display: block;
+		object-fit: cover;
+	}
+
+	.blog-card__body {
+		padding: 14px;
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+	}
+
+	.blog-card__cat {
+		margin: 0;
+		font-family: "Open Sans", sans-serif;
+		font-size: 12px;
+		font-weight: 700;
+		letter-spacing: 0.06em;
+		text-transform: uppercase;
+		color: #4f7c68;
+	}
+
+	.blog-card__title {
+		margin: 0;
+		font-family: "Playfair Display", serif;
+		font-size: 24px;
+		line-height: 1.15;
+		color: #2f2f2f;
+	}
+
+	.blog-card__desc {
+		margin: 0;
+		font-family: "Open Sans", sans-serif;
+		font-size: 14px;
+		line-height: 1.5;
+		color: #6f6f6f;
+	}
+
+	.blog-card__link {
+		display: inline-flex;
+		align-items: center;
+		gap: 8px;
+		margin-top: auto;
+		font-family: "Open Sans", sans-serif;
+		font-size: 13px;
+		font-weight: 700;
+		letter-spacing: 0.03em;
+		text-transform: uppercase;
+		text-decoration: none;
+		color: #b44f68;
+	}
+
+	.blog-card__link:hover {
+		color: #9c3f56;
+	}
+
+	.blog-card__link-icon {
+		width: 14px;
+		height: 14px;
+		display: inline-block;
+	}
+
+	@media (max-width: 1024px) {
+		.cont-blog-coor__layout {
+			grid-template-columns: 1fr;
+		}
+
+		.cont-blog-coor__img-placeholder {
+			min-height: 320px;
+		}
+
+		.cont-blog-coor__grid {
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+		}
+
+		.cont-blog-coor__head h2 {
+			font-size: 38px;
+		}
+	}
+
+	@media (max-width: 640px) {
+		.cont-blog-coor {
+			padding: 40px 0 52px;
+		}
+
+		.cont-blog-coor__container {
+			padding: 0 16px;
+		}
+
+		.cont-blog-coor__grid {
+			grid-template-columns: 1fr;
+		}
+
+		.cont-blog-coor__head h2 {
+			font-size: 31px;
+		}
+
+		.cont-blog-coor__img-placeholder {
+			min-height: 220px;
+		}
+	}
+</style>

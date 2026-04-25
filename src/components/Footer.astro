@@ -1,0 +1,491 @@
+---
+import logo from "../assets/logo.webp";
+import { Image } from "astro:assets";
+import Instagram from "../assets/sgv/instagram.astro";
+import TikTok from "../assets/sgv/tiktok.astro";
+import WhatsApp from "../assets/sgv/whatsapp.astro";
+---
+
+<footer id="footer" class="footer">
+	<div class="footer-container">
+		<div class="footer-top">
+			<div class="footer-brand">
+				<a href="/" aria-label="Ir al inicio">
+					<Image
+						src={logo}
+						alt="Logo Easy Care"
+						class="footer-logo"
+					/>
+				</a>
+				<p>
+					Cuidado facial y corporal de forma simple, profesional y
+					accesible.
+				</p>
+				<p>
+					Productos de alta calidad y asesoramiento personalizado para
+					mantener la piel saludable y radiante.
+				</p>
+				<p class="footer-value">
+					Skincare eficaz, atención personalizada y resultados
+					visibles en cada piel.
+				</p>
+				<div class="footer-badges" aria-label="Valores de la marca">
+					<span>🌿 Ingredientes efectivos</span>
+					<span>✨ Resultados reales</span>
+					<span>💧 Rutinas personalizadas</span>
+				</div>
+			</div>
+
+			<div class="footer-block footer-block--products">
+				<h3>Productos principales</h3>
+				<p class="footer-block__intro">
+					Selección esencial para una rutina completa y efectiva.
+				</p>
+				<ul class="footer-list footer-list--products">
+					<li>Limpiadores faciales</li>
+					<li>Tónicos</li>
+					<li>Agua termal</li>
+					<li>Sérums</li>
+					<li>Exfoliantes</li>
+					<li>Cremas hidratantes</li>
+					<li>Protector solar</li>
+					<li>Cremas corporales</li>
+				</ul>
+			</div>
+
+			<div class="footer-block footer-block--focus">
+				<h3>Enfoque y diferenciación</h3>
+				<p class="footer-block__intro">
+					Acompañamiento real para que cada piel tenga su propia
+					estrategia.
+				</p>
+				<ul class="footer-list footer-list--focus">
+					<li>Asesoramiento personalizado según tipo de piel</li>
+					<li>Recomendación de productos adaptados al cliente</li>
+					<li>Enfoque en skincare coreano</li>
+					<li>Atención cercana y profesional</li>
+					<li>Ingredientes efectivos e innovadores</li>
+					<li>Compromiso con calidad y transparencia</li>
+				</ul>
+			</div>
+
+			<div class="footer-block footer-block--contact">
+				<h3>Contacto</h3>
+				<p class="footer-block__intro">
+					Elige el canal que te resulte más cómodo.
+				</p>
+				<ul class="footer-list footer-list--contact">
+					<li><a href="#">📍 Atención presencial en tienda</a></li>
+					<li><a href="#">📲 Atención por WhatsApp</a></li>
+					<li><a href="#">🌐 Atención por redes sociales</a></li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="footer-middle">
+			<div class="footer-block">
+				<h3>Ubicación</h3>
+				<p>Getafe Centro</p>
+				<p>Plaza de las Cuestas, 3</p>
+				<p>Getafe, Madrid</p>
+			</div>
+
+			<div class="footer-block">
+				<h3>Horario</h3>
+				<p>Lunes a Viernes: 9:00 - 20:30</p>
+				<p>Sábado y Domingo: 15:00 - 21:00</p>
+				<p>Festivos: Cerrado</p>
+			</div>
+
+			<div class="footer-block">
+				<h3>Métodos de pago</h3>
+				<ul>
+					<li>Bizum</li>
+					<li>Efectivo</li>
+					<li>Tarjeta</li>
+				</ul>
+			</div>
+
+			<div class="footer-block">
+				<h3>Canales digitales</h3>
+				<ul class="footer-list footer-list--contact">
+					<li>
+						<a href="#">
+							<Instagram class="add-car__icon" />
+							<span>Instagram</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<TikTok class="add-car__icon" />
+							<span>TikTok</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<WhatsApp class="add-car__icon" />
+							<span>WhatsApp</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="footer-bottom">
+			<div class="footer-bottom__panel">
+				<p class="footer-audience">
+					Público objetivo: personas de 18 a 40 años interesadas en el
+					cuidado facial y corporal, con ingresos medios o altos, que
+					buscan calidad, eficacia y asesoramiento.
+				</p>
+				<p class="footer-copy">Skincare • Bienestar • Confianza ✨</p>
+			</div>
+			<div class="footer-bottom__legal">
+				<p class="footer-rights">
+					© 2026 Easy Care. Todos los derechos reservados.
+				</p>
+			</div>
+		</div>
+	</div>
+</footer>
+
+<style>
+	.footer {
+		background:
+			radial-gradient(
+				circle at 10% 20%,
+				#fff7f9 0%,
+				#fff7f9 24%,
+				transparent 24%
+			),
+			radial-gradient(
+				circle at 90% 82%,
+				#f1f8f4 0%,
+				#f1f8f4 26%,
+				transparent 26%
+			),
+			linear-gradient(160deg, #f8efe7 0%, #f7f0f5 52%, #edf5ef 100%);
+		border-top: 1px solid #d6c9b8;
+		padding: 52px 0 30px;
+		color: #2f2f2f;
+	}
+
+	.footer-container {
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 0 28px;
+	}
+
+	.footer-top,
+	.footer-middle {
+		display: grid;
+		grid-template-columns: repeat(4, minmax(0, 1fr));
+		gap: 24px;
+	}
+
+	.footer-middle {
+		margin-top: 26px;
+		padding-top: 20px;
+		border-top: 1px solid rgba(166, 141, 122, 0.35);
+	}
+
+	.footer-middle .footer-block {
+		background: transparent;
+		border: none;
+		border-radius: 0;
+		box-shadow: none;
+		padding: 0 12px;
+	}
+
+	.footer-middle .footer-block:not(:first-child) {
+		border-left: 1px solid rgba(166, 141, 122, 0.28);
+	}
+
+	.footer-middle .footer-block h3 {
+		font-size: 19px;
+		letter-spacing: 0.01em;
+	}
+
+	.footer-middle .footer-block p,
+	.footer-middle .footer-block li {
+		margin: 8px 0 0;
+	}
+
+	.footer-middle .footer-list--contact {
+		margin-top: 10px;
+		gap: 9px;
+	}
+
+	.footer-middle .footer-list--contact a {
+		justify-content: flex-start;
+		padding: 0;
+		background-color: transparent;
+		border: none;
+		font-weight: 600;
+		color: #3b3232;
+	}
+
+	.footer-logo {
+		width: 210px;
+		height: auto;
+		display: block;
+		border-radius: 14px;
+		box-shadow: 0 10px 24px rgba(65, 34, 48, 0.12);
+	}
+
+	.footer-brand h2 {
+		margin: 0;
+		font-size: 34px;
+		line-height: 1.05;
+		font-family: "Playfair Display", serif;
+	}
+
+	.footer-brand p,
+	.footer-block p,
+	.footer-bottom p,
+	.footer-block li {
+		margin: 10px 0 10px;
+		font-size: 15px;
+		line-height: 1.5;
+		font-family: "Open Sans", sans-serif;
+		color: #3c3c3c;
+		text-decoration: none;
+	}
+
+	.footer-value {
+		font-weight: 700;
+		color: #a5486b;
+	}
+
+	.footer-badges {
+		margin-top: 14px;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 8px;
+	}
+
+	.footer-badges span {
+		display: inline-flex;
+		align-items: center;
+		gap: 6px;
+		padding: 6px 10px;
+		border-radius: 999px;
+		background-color: rgba(255, 255, 255, 0.72);
+		border: 1px solid #e3d7c7;
+		font-size: 12px;
+		font-family: "Open Sans", sans-serif;
+		font-weight: 700;
+		letter-spacing: 0.02em;
+		color: #4a3f3f;
+	}
+
+	.footer-block h3 {
+		margin: 0;
+		font-size: 20px;
+		font-family: "Playfair Display", serif;
+		color: #2f2f2f;
+	}
+
+	.footer-block {
+		background-color: rgba(255, 255, 255, 0.68);
+		border: 1px solid #e1d5c6;
+		border-radius: 12px;
+		padding: 16px;
+		backdrop-filter: blur(1px);
+	}
+
+	.footer-brand {
+		background-color: rgba(255, 255, 255, 0.75);
+		border: 1px solid #e1d5c6;
+		border-radius: 14px;
+		padding: 18px;
+	}
+
+	.footer-block ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	.footer-list {
+		margin-top: 12px;
+		display: grid;
+		gap: 8px;
+	}
+
+	.footer-list li {
+		margin: 0;
+		line-height: 1.45;
+	}
+
+	.footer-list--products {
+		grid-template-columns: repeat(1, minmax(0, 1fr));
+		column-gap: 12px;
+	}
+
+	.footer-list--products li,
+	.footer-list--focus li {
+		position: relative;
+		padding-left: 14px;
+	}
+
+	.footer-list--products li::before,
+	.footer-list--focus li::before {
+		content: "";
+		position: absolute;
+		left: 0;
+		top: 9px;
+		width: 6px;
+		height: 6px;
+		border-radius: 50%;
+		background-color: #b44f68;
+	}
+
+	.footer-list--focus li {
+		background-color: rgba(255, 255, 255, 0.6);
+		border: 1px solid #eadfce;
+		border-radius: 8px;
+		padding: 8px 10px 8px 22px;
+	}
+
+	.footer-list--focus li::before {
+		left: 10px;
+		top: 14px;
+		background-color: #4f7c68;
+	}
+
+	.footer-list--contact li {
+		padding-left: 0;
+	}
+
+	.footer-list--contact a {
+		display: flex;
+		align-items: center;
+		padding: 10px 12px;
+		border-radius: 9px;
+		border: 1px solid #e7dacb;
+		background-color: rgba(255, 255, 255, 0.74);
+		font-weight: 700;
+		text-decoration: none;
+		color: #000;
+		line-height: 1.5;
+		gap: 10px;
+	}
+
+	.footer-block a:hover {
+		color: #a5486b;
+	}
+
+	.footer-bottom {
+		margin-top: 26px;
+		padding: 22px 0 0;
+		border-top: 1px solid #d6c9b8;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+		gap: 12px;
+	}
+
+	.footer-bottom__panel {
+		padding: 14px 16px;
+		border-radius: 12px;
+		border: 1px solid #e1d5c6;
+		background-color: rgba(255, 255, 255, 0.72);
+	}
+
+	.footer-audience {
+		margin: 0;
+		text-align: left;
+		font-size: 14px;
+		line-height: 1.5;
+		color: #4a4340;
+	}
+
+	.footer-bottom__legal {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+	}
+
+	.footer-copy {
+		margin: 0;
+		padding: 8px 12px;
+		border-radius: 999px;
+		border: 1px solid #e2d6c8;
+		background-color: rgba(255, 255, 255, 0.88);
+		font-family: "Playfair Display", serif;
+		font-size: 18px;
+		color: #2f2f2f;
+		white-space: nowrap;
+	}
+
+	.footer-rights {
+		margin: 0;
+		font-size: 14px;
+		color: #595959;
+	}
+
+	@media (max-width: 1040px) {
+		.footer-top,
+		.footer-middle {
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+		}
+
+		.footer-brand {
+			grid-column: span 2;
+		}
+	}
+
+	@media (max-width: 640px) {
+		.footer {
+			padding: 36px 0 22px;
+		}
+
+		.footer-container {
+			padding: 0 16px;
+		}
+
+		.footer-top,
+		.footer-middle {
+			grid-template-columns: 1fr;
+			gap: 20px;
+			padding: 18px 10px 10px;
+		}
+
+		.footer-brand {
+			grid-column: auto;
+		}
+
+		.footer-logo {
+			width: 180px;
+		}
+
+		.footer-brand,
+		.footer-block {
+			padding: 14px;
+		}
+
+		.footer-copy {
+			font-size: 17px;
+		}
+
+		.footer-bottom {
+			gap: 10px;
+		}
+
+		.footer-bottom__panel {
+			flex-direction: column;
+			align-items: flex-start;
+			padding: 12px;
+		}
+
+		.footer-audience {
+			font-size: 13px;
+		}
+
+		.footer-list--products {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>

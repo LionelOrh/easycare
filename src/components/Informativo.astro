@@ -1,0 +1,145 @@
+---
+import { Image } from "astro:assets";
+import info1 from "../assets/i-1.webp";
+import info2 from "../assets/i-2.webp";
+---
+
+<section id="informativo" class="informativo">
+    <div class="informativo-container">
+        <div class="info-grid">
+            <div class="info-top-left">
+                <h2 class="i_grid_text">Eleva tu ...............</h2>
+            </div>
+            <div class="info-top-right">
+                <div class="i_image_contain">
+                    <Image
+                        src={info1}
+                        alt="Banner Informativo"
+                        class="i_grid_image"
+                    />
+                    <Image
+                        src={info2}
+                        alt="Banner Informativo"
+                        class="i_grid_image"
+                    />
+                </div>
+                <div class="i_text_contain_more">
+                    <a href="/productos" class="i_grid_text_more">Más <span class="i_arrow" aria-hidden="true">></span></a>
+                </div>
+            </div>
+            <div class="info-bottom-left">
+                <p class="i_grid_text_min">Rutina de cuidado de la piel con productos inspirados en el cuidado coreano, asesoramiento cercano y calidad que se siente y se ve.</p>
+
+            </div>
+            <div class="info-bottom-right">
+                <h2 class="i_grid_text">Experiencia de SkinCare ..................................................</h2>
+            </div>
+        </div>
+    </div>
+</section>
+<style>
+    .informativo {
+        padding: 40px 28px;
+        background-color: #f9f9f9;
+    }
+
+    .informativo-container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .informativo h2 {
+        font-size: 68px;
+        color: #333;
+        margin: 0;
+        line-height: 1.05;
+        font-family: poppins, sans-serif;
+    }
+
+    .info-grid {
+        display: grid;
+        grid-template-columns: 280px 1fr;
+        grid-template-rows: auto auto;
+        column-gap: 34px;
+        row-gap: 14px;
+        align-items: center;
+    }
+
+    .info-top-left {
+        grid-column: 1;
+        grid-row: 1;
+        text-align: left;
+    }
+
+    .info-top-right {
+        grid-column: 2;
+        grid-row: 1;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        border-top: 1px solid #d7d0c4;
+        border-bottom: 1px solid #d7d0c4;
+        padding: 10px 0;
+    }
+
+    .info-bottom-left {
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+    .info-bottom-right {
+        grid-column: 2;
+        grid-row: 2;
+        text-align: left;
+    }
+
+    .i_image_contain {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        flex-wrap: nowrap;
+    }
+
+    .i_grid_text_more {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 25px;
+        color: #555;
+        line-height: 1;
+        font-family: poppins, sans-serif;
+        font-weight: 600;
+        white-space: nowrap;
+        text-decoration: none;
+    }
+
+    .i_arrow {
+        font-size: 18px;
+    }
+
+    .i_grid_image {
+        width: 225px;
+        height: auto;
+        border-radius: 10px;
+    }
+
+    .i_text_contain_more {
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+        height: auto;
+        padding: 0;
+        min-width: 120px;
+    }
+
+    .i_grid_text_min {
+        font-size: 15px;
+        color: #000000;
+        line-height: 1.45;
+        margin: 0;
+        max-width: 260px;
+        font-family: poppins, sans-serif;
+    }
+
+    
+</style>

@@ -1,0 +1,276 @@
+---
+import { Image } from "astro:assets";
+import bl1 from "../assets/bl-1.webp";
+import bl2 from "../assets/bl-2.webp";
+import bl3 from "../assets/bl-3.webp";
+import bl4 from "../assets/bl-4.webp";
+import bl5 from "../assets/bl-5.webp";
+import bl6 from "../assets/bl-6.webp";
+import bl7 from "../assets/bl-7.webp";
+import bl8 from "../assets/bl-8.webp";
+import bl9 from "../assets/bl-9.webp";
+import bl10 from "../assets/bl-10.webp";
+import bl11 from "../assets/bl-11.webp";
+import bl12 from "../assets/bl-12.webp";
+
+const posts = [
+	{
+		categoria: "ampoule",
+		titulo: "Microneedling: la tecnica que transforma tu piel a partir de los 45 anos",
+		descripcion:
+			"Que es el microneedling? El microneedling, tambien conocido como terapia de induccion de colageno, es un tratamiento que utiliza microagujas para ...",
+		img: bl1,
+	},
+	{
+		categoria: "antiarrugas",
+		titulo: "Que es el PDRN y por que es tendencia en la cosmetica coreana?",
+		descripcion:
+			"En el dinamico mundo de la cosmetica coreana, cada ano emergen ingredientes innovadores que prometen revolucionar el cuidado de la piel. Uno de los...",
+		img: bl2,
+	},
+	{
+		categoria: "acido fitico",
+		titulo: "Cuales son los beneficios del arroz para la piel?",
+		descripcion:
+			"Este grano milenario, cargado de antioxidantes, vitaminas y minerales, no solo nutre desde dentro, tambien ilumina, hidrata y mejora la textura de ...",
+		img: bl3,
+	},
+	{
+		categoria: "antiarrugas",
+		titulo: "Descubre como la Trufa Blanca transforma tu piel: Hidratacion, Luminosidad y Antiedad",
+		descripcion:
+			"La cosmetica coreana, conocida por su innovacion y eficacia, ha incorporado un ingrediente exclusivo que esta revolucionando el cuidado de la piel:...",
+		img: bl4,
+	},
+	{
+		categoria: "acne",
+		titulo: "Prebioticos y Probioticos en cosmetica: Que son, beneficios y diferencias",
+		descripcion:
+			"La cosmetica coreana sigue marcando tendencia, destacandose no solo por sus innovadores ingredientes, sino tambien por su enfoque holistico hacia l...",
+		img: bl5,
+	},
+	{
+		categoria: "antiarrugas",
+		titulo: "Proteccion solar: Por que es el mayor secreto antiedad hasta la fecha",
+		descripcion:
+			"La busqueda de una piel joven y saludable es algo que muchas personas persiguen, pero el verdadero secreto antiedad no se encuentra en caros tratam...",
+		img: bl6,
+	},
+	{
+		categoria: "antiinflamatorio",
+		titulo: "Centella Asiatica: Como Mejora Tu Rutina de Cuidado Facial",
+		descripcion:
+			"La centella asiatica es uno de los ingredientes mas populares en la cosmetica coreana actual. Aclamada por sus propiedades curativas y rejuvenecedo...",
+		img: bl7,
+	},
+	{
+		categoria: "acido hialuronico",
+		titulo: "Niacinamida: El ingrediente estrella de la cosmetica coreana",
+		descripcion:
+			"La cosmetica coreana se ha convertido en un referente mundial en el cuidado de la piel, entre los ingredientes mas destacados de esta tendencia se ...",
+		img: bl8,
+	},
+	{
+		categoria: "acido hialuronico",
+		titulo: "Todo lo que necesitas saber sobre la Vitamina C: Mito o Realidad",
+		descripcion:
+			"La Vitamina C es uno de los ingredientes mas buscados y utilizados de la cosmetica debido a todos sus beneficios. Pero, todavia tienes dudas? Aqu...",
+		img: bl9,
+	},
+	{
+		categoria: "acne",
+		titulo: "Beneficios del Aloe Vera para la Piel: Lo que Necesitas Saber",
+		descripcion:
+			"Descubre la infinidad de usos y beneficios que tiene el Aloe vera para el cuidado de tu piel. Pese a estar familiarizados con su uso, seguro que au...",
+		img: bl10,
+	},
+	{
+		categoria: "antiedad",
+		titulo: "Que son los exosomas en la cosmetica?",
+		descripcion:
+			"Que son los exosomas? que han aportado a la cosmetica? cuales son sus beneficios?",
+		img: bl11,
+	},
+	{
+		categoria: "beauty tips",
+		titulo: "Que es Clean Beauty?",
+		descripcion:
+			"Quieres descubrir que es Clean Beauty? Aqui tienes todo lo que necesitas para cuidar tu piel de la manera mas sana, a la vez que eres responsab...",
+		img: bl12,
+	},
+];
+
+import FlechaIcon from "../assets/sgv/flecha.astro";
+---
+
+<section id="cont-blog-coor" class="cont-blog-coor">
+	<div class="cont-blog-coor__container">
+		<div class="cont-blog-coor__head">
+			<h2>Contenido del Blog para Expertos</h2>
+			<p>12 articulos sobre skincare coreano, ingredientes y rutinas reales para cada tipo de piel.</p>
+		</div>
+
+		<div class="cont-blog-coor__grid">
+			{
+				posts.map((post) => (
+					<article class="blog-card">
+						<Image src={post.img} alt={post.titulo} class="blog-card__img" />
+						<div class="blog-card__body">
+							<p class="blog-card__cat">{post.categoria}</p>
+							<h3 class="blog-card__title">{post.titulo}</h3>
+							<p class="blog-card__desc">{post.descripcion}</p>
+							<a href="#" class="blog-card__link">
+								<span>Leer mas</span>
+								<FlechaIcon class="blog-card__link-icon" />
+							</a>
+						</div>
+					</article>
+				))
+			}
+		</div>
+	</div>
+</section>
+
+<style>
+	.cont-blog-coor {
+		background-color: #f8c8dc4b;
+		padding: 56px 0 70px;
+	}
+
+	.cont-blog-coor__container {
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 0 28px;
+	}
+
+	.cont-blog-coor__head {
+		margin-bottom: 24px;
+	}
+
+	.cont-blog-coor__head h2 {
+		margin: 0;
+		font-family: "Playfair Display", serif;
+		font-size: 44px;
+		line-height: 1.05;
+		color: #2f2f2f;
+	}
+
+	.cont-blog-coor__head p {
+		margin: 10px 0 0;
+		font-family: "Open Sans", sans-serif;
+		font-size: 16px;
+		line-height: 1.4;
+		color: #6f6f6f;
+	}
+
+	.cont-blog-coor__grid {
+		display: grid;
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		gap: 18px;
+	}
+
+	.blog-card {
+		background-color: #ffffff;
+		border: 1px solid #e6ddd1;
+		border-radius: 10px;
+		overflow: hidden;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.blog-card__img {
+		height: 190px;
+		width: 100%;
+		display: block;
+		object-fit: cover;
+	}
+
+	.blog-card__body {
+		padding: 14px;
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+	}
+
+	.blog-card__cat {
+		margin: 0;
+		font-family: "Open Sans", sans-serif;
+		font-size: 12px;
+		font-weight: 700;
+		letter-spacing: 0.06em;
+		text-transform: uppercase;
+		color: #4f7c68;
+	}
+
+	.blog-card__title {
+		margin: 0;
+		font-family: "Playfair Display", serif;
+		font-size: 24px;
+		line-height: 1.15;
+		color: #2f2f2f;
+	}
+
+	.blog-card__desc {
+		margin: 0;
+		font-family: "Open Sans", sans-serif;
+		font-size: 14px;
+		line-height: 1.5;
+		color: #6f6f6f;
+	}
+
+	.blog-card__link {
+		display: inline-flex;
+		align-items: center;
+		gap: 8px;
+		margin-top: auto;
+		font-family: "Open Sans", sans-serif;
+		font-size: 13px;
+		font-weight: 700;
+		letter-spacing: 0.03em;
+		text-transform: uppercase;
+		text-decoration: none;
+		color: #b44f68;
+	}
+
+	.blog-card__link:hover {
+		color: #9c3f56;
+	}
+
+	.blog-card__link-icon {
+		width: 14px;
+		height: 14px;
+		display: inline-block;
+	}
+
+	@media (max-width: 1024px) {
+		.cont-blog-coor__grid {
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+		}
+
+		.cont-blog-coor__head h2 {
+			font-size: 38px;
+		}
+	}
+
+	@media (max-width: 640px) {
+		.cont-blog-coor {
+			padding: 40px 0 52px;
+		}
+
+		.cont-blog-coor__container {
+			padding: 0 16px;
+		}
+
+		.cont-blog-coor__grid {
+			grid-template-columns: 1fr;
+		}
+
+		.cont-blog-coor__head h2 {
+			font-size: 31px;
+		}
+
+		.blog-card__img {
+			height: 176px;
+		}
+	}
+</style>

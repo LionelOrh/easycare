@@ -1,0 +1,159 @@
+---
+import logo from "../assets/logo.webp";
+
+import { Image } from "astro:assets";
+
+import Bolsa from "../assets/sgv/bolsa.astro";
+---
+
+<header id="header" class="header">
+    <div class="header_container">
+        <a href="/" class="header_logo" aria-label="Ir al inicio">
+            <Image src={logo} alt="Logo EasyCare" class="logo" />
+        </a>
+        <nav class="header_nav" aria-label="Navegacion principal">
+            <ul class="nav__list">
+                <li class="nav__item">
+                    <a href="/productos" class="nav__link">Productos</a>
+                </li>
+                <li class="nav__item">
+                    <a href="/blogcoor" class="nav__link">Blog Corporativo</a>
+                </li>
+                <li class="nav__item">
+                    <a href="/blogexp" class="nav__link">Blog Expertos</a>
+                </li>
+            </ul>
+        </nav>
+        <a href="/productos" class="header_cta">
+            <Bolsa class="add-car__icon" />
+            <span>Comprar</span></a
+        >
+    </div>
+</header>
+
+<style>
+    .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+        background: rgba(252, 245, 236, 0.95);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid rgba(84, 60, 43, 0.15);
+    }
+
+    .header_container {
+        display: flex;
+        max-width: 1200px;
+        margin: 0 auto;
+        justify-content: space-between;
+        align-items: center;
+        gap: 24px;
+        padding: 14px 36px;
+    }
+
+    .logo {
+        width: 320px;
+        height: auto;
+        border-radius: 14px;
+        display: block;
+    }
+
+    .header_nav {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+    }
+
+    .nav__list {
+        display: flex;
+        align-items: center;
+        gap: 28px;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .nav__link {
+        text-decoration: none;
+        color: #434343;
+        font-size: 18px;
+        font-family: "Playfair Display", serif;
+        font-weight: 600;
+        transition: color 0.2s ease;
+    }
+
+    .nav__link:hover {
+        color: #b85c78;
+    }
+
+    .header_cta {
+        text-decoration: none;
+        background-color: #ff6f91;
+        color: #ffffff;
+        font-family: "Open Sans", sans-serif;
+        font-size: 14px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        padding: 10px 18px;
+        border-radius: 999px;
+        transition: background-color 0.2s ease;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .header_cta:hover {
+        background-color: #f25b81;
+    }
+
+    @media (max-width: 980px) {
+        .header_container {
+            padding: 12px 18px;
+            gap: 16px;
+        }
+
+        .logo {
+            width: 170px;
+        }
+
+        .nav__list {
+            gap: 16px;
+        }
+
+        .nav__link {
+            font-size: 16px;
+        }
+
+        .header_cta {
+            padding: 9px 14px;
+            font-size: 12px;
+        }
+    }
+
+    @media (max-width: 760px) {
+        .header_container {
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 10px 14px;
+        }
+
+        .header_nav {
+            order: 3;
+            width: 100%;
+        }
+
+        .nav__list {
+            width: 100%;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px 18px;
+        }
+
+        .nav__link {
+            font-size: 15px;
+        }
+    }
+</style>
