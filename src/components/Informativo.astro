@@ -38,6 +38,7 @@ import info2 from "../assets/i-2.webp";
     </div>
 </section>
 <style>
+    /* Estilos Base (Desktop) */
     .informativo {
         padding: 15dvh 0px;
         background-color: #f9f9f9;
@@ -46,6 +47,7 @@ import info2 from "../assets/i-2.webp";
     .informativo-container {
         max-width: 1200px;
         margin: 0 auto;
+        padding: 0 28px; /* Coherencia con productos */
     }
 
     .informativo h2 {
@@ -65,12 +67,7 @@ import info2 from "../assets/i-2.webp";
         align-items: center;
     }
 
-    .info-top-left {
-        grid-column: 1;
-        grid-row: 1;
-        text-align: left;
-    }
-
+    .info-top-left { grid-column: 1; grid-row: 1; text-align: left; }
     .info-top-right {
         grid-column: 2;
         grid-row: 1;
@@ -82,22 +79,20 @@ import info2 from "../assets/i-2.webp";
         padding: 10px 0;
     }
 
-    .info-bottom-left {
-        grid-column: 1;
-        grid-row: 2;
-    }
-
-    .info-bottom-right {
-        grid-column: 2;
-        grid-row: 2;
-        text-align: left;
-    }
+    .info-bottom-left { grid-column: 1; grid-row: 2; }
+    .info-bottom-right { grid-column: 2; grid-row: 2; text-align: left; }
 
     .i_image_contain {
         display: flex;
         align-items: center;
         gap: 12px;
-        flex-wrap: nowrap;
+    }
+
+    .i_grid_image {
+        width: 225px;
+        height: auto;
+        border-radius: 10px;
+        object-fit: cover;
     }
 
     .i_grid_text_more {
@@ -106,40 +101,86 @@ import info2 from "../assets/i-2.webp";
         gap: 6px;
         font-size: 25px;
         color: #555;
-        line-height: 1;
         font-family: poppins, sans-serif;
         font-weight: 600;
-        white-space: nowrap;
         text-decoration: none;
-    }
-
-    .i_arrow {
-        font-size: 18px;
-    }
-
-    .i_grid_image {
-        width: 225px;
-        height: auto;
-        border-radius: 10px;
-    }
-
-    .i_text_contain_more {
-        display: flex;
-        justify-content: flex-end;
-        align-items: flex-end;
-        height: auto;
-        padding: 0;
-        min-width: 120px;
     }
 
     .i_grid_text_min {
         font-size: 15px;
-        color: #000000;
+        color: #000;
         line-height: 1.45;
-        margin: 0;
         max-width: 260px;
         font-family: poppins, sans-serif;
     }
 
-    
+    /* --- RESPONSIVE --- */
+
+    @media (max-width: 960px) {
+        .informativo h2 {
+            font-size: 48px; /* Reducción de título */
+        }
+        
+        .info-grid {
+            grid-template-columns: 200px 1fr; /* Grid más apretado */
+            column-gap: 20px;
+        }
+
+        .i_grid_image {
+            width: 150px; /* Imágenes más pequeñas */
+        }
+    }
+
+    @media (max-width: 640px) {
+        .informativo {
+            padding: 40px 0; /* Padding igual a productos */
+        }
+
+        .informativo-container {
+            padding: 0 16px;
+        }
+
+        .info-grid {
+            display: flex; /* Cambiamos a flex para apilar fácilmente */
+            flex-direction: column;
+            gap: 24px;
+            text-align: center;
+        }
+
+        /* Forzamos a que todos los elementos ocupen el ancho total */
+        .info-top-left, .info-top-right, .info-bottom-left, .info-bottom-right {
+            width: 100%;
+            text-align: center;
+        }
+
+        .informativo h2 {
+            font-size: 31px; /* Igual que el h2 de productos */
+        }
+
+        .info-top-right {
+            flex-direction: column; /* Apilamos imágenes y link "Más" */
+            gap: 20px;
+            padding: 20px 0;
+        }
+
+        .i_image_contain {
+            justify-content: center;
+            width: 100%;
+        }
+
+        .i_grid_image {
+            width: 45%; /* Dos imágenes lado a lado en móvil */
+            max-width: 160px;
+        }
+
+        .i_grid_text_min {
+            max-width: 100%; /* El párrafo ocupa todo el ancho */
+            font-size: 15px;
+        }
+
+        .i_text_contain_more {
+            justify-content: center;
+            align-items: center;
+        }
+    }
 </style>
