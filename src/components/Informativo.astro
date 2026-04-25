@@ -8,7 +8,8 @@ import info2 from "../assets/i-2.webp";
     <div class="informativo-container">
         <div class="info-grid">
             <div class="info-top-left">
-                <h2 class="i_grid_text">Eleva tu ...............</h2>
+                <h2 class="i_grid_text">Eleva tu</h2>
+                <div class="i_dots"></div>
             </div>
             <div class="info-top-right">
                 <div class="i_image_contain">
@@ -24,15 +25,22 @@ import info2 from "../assets/i-2.webp";
                     />
                 </div>
                 <div class="i_text_contain_more">
-                    <a href="/productos" class="i_grid_text_more">Más <span class="i_arrow" aria-hidden="true">></span></a>
+                    <a href="/productos" class="i_grid_text_more"
+                        >Más <span class="i_arrow" aria-hidden="true">></span
+                        ></a
+                    >
                 </div>
             </div>
             <div class="info-bottom-left">
-                <p class="i_grid_text_min">Rutina de cuidado de la piel con productos inspirados en el cuidado coreano, asesoramiento cercano y calidad que se siente y se ve.</p>
-
+                <p class="i_grid_text_min">
+                    Rutina de cuidado de la piel con productos inspirados en el
+                    cuidado coreano, asesoramiento cercano y calidad que se
+                    siente y se ve.
+                </p>
             </div>
             <div class="info-bottom-right">
-                <h2 class="i_grid_text">Experiencia de SkinCare ..................................................</h2>
+                <h2 class="i_grid_text">Experiencia de SkinCare</h2>
+                <div class="i_dots"></div>
             </div>
         </div>
     </div>
@@ -42,6 +50,7 @@ import info2 from "../assets/i-2.webp";
     .informativo {
         padding: 15dvh 0px;
         background-color: #f9f9f9;
+        overflow: hidden;
     }
 
     .informativo-container {
@@ -67,7 +76,11 @@ import info2 from "../assets/i-2.webp";
         align-items: center;
     }
 
-    .info-top-left { grid-column: 1; grid-row: 1; text-align: left; }
+    .info-top-left {
+        grid-column: 1;
+        grid-row: 1;
+        text-align: left;
+    }
     .info-top-right {
         grid-column: 2;
         grid-row: 1;
@@ -79,8 +92,15 @@ import info2 from "../assets/i-2.webp";
         padding: 10px 0;
     }
 
-    .info-bottom-left { grid-column: 1; grid-row: 2; }
-    .info-bottom-right { grid-column: 2; grid-row: 2; text-align: left; }
+    .info-bottom-left {
+        grid-column: 1;
+        grid-row: 2;
+    }
+    .info-bottom-right {
+        grid-column: 2;
+        grid-row: 2;
+        text-align: left;
+    }
 
     .i_image_contain {
         display: flex;
@@ -93,6 +113,31 @@ import info2 from "../assets/i-2.webp";
         height: auto;
         border-radius: 10px;
         object-fit: cover;
+    }
+    .i_grid_text {
+        font-size: 68px;
+        color: #333;
+        margin: 0;
+        line-height: 1.05;
+        font-family: poppins, sans-serif;
+    }
+    .i_dots {
+        width: 100%;
+        height: 20px;
+        margin-top: 5px;
+        position: relative;
+        overflow: hidden;
+    }
+    .i_dots::after {
+        /* Generamos una fila larga de puntos reales */
+        content: "....................................................................................................";
+        position: absolute;
+        top: 0;
+        left: 0;
+        font-size: 30px; /* Tamaño de los puntos */
+        letter-spacing: 8px; /* Espacio entre puntos */
+        color: #333;
+        line-height: 0.5;
     }
 
     .i_grid_text_more {
@@ -120,7 +165,7 @@ import info2 from "../assets/i-2.webp";
         .informativo h2 {
             font-size: 48px; /* Reducción de título */
         }
-        
+
         .info-grid {
             grid-template-columns: 200px 1fr; /* Grid más apretado */
             column-gap: 20px;
@@ -129,6 +174,9 @@ import info2 from "../assets/i-2.webp";
         .i_grid_image {
             width: 150px; /* Imágenes más pequeñas */
         }
+        .i_grid_text { font-size: 48px; }
+        .info-grid { grid-template-columns: 1fr 1fr; }
+        .i_grid_image { width: 140px; }
     }
 
     @media (max-width: 640px) {
@@ -148,7 +196,10 @@ import info2 from "../assets/i-2.webp";
         }
 
         /* Forzamos a que todos los elementos ocupen el ancho total */
-        .info-top-left, .info-top-right, .info-bottom-left, .info-bottom-right {
+        .info-top-left,
+        .info-top-right,
+        .info-bottom-left,
+        .info-bottom-right {
             width: 100%;
             text-align: center;
         }
@@ -181,6 +232,15 @@ import info2 from "../assets/i-2.webp";
         .i_text_contain_more {
             justify-content: center;
             align-items: center;
+        }
+        .i_grid_text {
+            font-size: 34px; /* Un poco más grande para que resalte en móvil */
+            text-align: center;
+        }
+
+        .i_dots::after {
+            font-size: 30px;
+            letter-spacing: 6px;
         }
     }
 </style>
